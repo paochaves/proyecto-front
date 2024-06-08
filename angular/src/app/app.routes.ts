@@ -5,7 +5,7 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactanosComponent } from './components/contactanos/contactanos.component';
 import { RegistreseComponent } from './components/registrese/registrese.component';
-import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { LoginComponent } from './components/login/login.component';
 import { PrivadoComponent } from './components/privado/privado.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 
@@ -21,9 +21,9 @@ export const routes: Routes = [
   },
   { path: 'registrese', component: RegistreseComponent, title: 'Registrese' },
   {
-    path: 'iniciar-sesion',
-    component: IniciarSesionComponent,
-    title: 'Inicio de sesión',
+    path: 'login',
+    component: LoginComponent,
+    title: '',
   },
   { path: 'privado', component: PrivadoComponent, title: 'Privado' },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

@@ -6,7 +6,7 @@ import { ServiciosComponent } from '../servicios/servicios.component';
 import { NosotrosComponent } from '../nosotros/nosotros.component';
 import { ContactanosComponent } from '../contactanos/contactanos.component';
 import { RegistreseComponent } from '../registrese/registrese.component';
-import { IniciarSesionComponent } from '../iniciar-sesion/iniciar-sesion.component';
+import { LoginComponent } from '../login/login.component';
 import { PrivadoComponent } from '../privado/privado.component';
 
 @Component({
@@ -20,7 +20,7 @@ import { PrivadoComponent } from '../privado/privado.component';
     NosotrosComponent,
     ContactanosComponent,
     RegistreseComponent,
-    IniciarSesionComponent,
+    LoginComponent,
     PrivadoComponent,
   ],
   templateUrl: './navegacion.component.html',
