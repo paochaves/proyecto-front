@@ -40,7 +40,7 @@ export class LoginComponent {
         };
         this.loginService.login(credencial).subscribe((response: any) => {
           console.log('response: ', response);
-          const decoded = jwtHelperService.decodeToken(response.datos);
+          const decoded = jwtHelperService.decodeToken(response.datos.token);
           console.log('decoded: ', decoded);
           this.router.navigateByUrl('/login');
         });
