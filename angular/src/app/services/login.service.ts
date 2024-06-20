@@ -14,8 +14,10 @@ export class LoginService {
   router = inject(Router);
 
   API_URL = 'http://localhost:3000/iniciarSesion';
+  //API_URLvalidar = 'http://localhost:3000/validarToken';
 
   login(credencial: Credencial) {
+   // console.log(credencial);
     return this.httpClient.post(this.API_URL, credencial)
   }
 
@@ -32,7 +34,7 @@ export class LoginService {
   }
 
 logout() {
-  this.toastrService.info('¡Hasta pronto!');
+  this.toastrService.info('¡Hasta pronto!');  
   localStorage.removeItem("token");
   this.router.navigate(['/']);
 }

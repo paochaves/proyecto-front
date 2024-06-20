@@ -25,8 +25,10 @@ export class privadoComponent {
         } else {
           this.loginService.logout();
         }
-      }
-    )}
+      });
+    } else {
+      this.loginService.logout();
+    }
   }
 }
     /* const decoded = jwtHelperService.decodeToken(token);

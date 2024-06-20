@@ -12,7 +12,7 @@ import { Credencial } from '../../interfaces/credencial';
 import { LoginService } from '../../services/login.service';
 
 
-const jwtHelperService = new JwtHelperService();//preguntar esta constante
+const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-login',
@@ -42,8 +42,9 @@ export class LoginComponent {
           password,
         };
         this.loginService.login(credencial).subscribe((response: any) => {
+          console.log("response", response);
           if (response.resultado === 'bien') {
-            localStorage.setItem('token', response.datos);
+            localStorage.setItem('token', response.datos.token);
             this.router.navigateByUrl('/privado');
           } else {
             this.toastrService.warning('Invalid credentials');
@@ -57,8 +58,4 @@ export class LoginComponent {
   }
 }   
                              
-          //console.log('response: ', response);
-          //const decoded = jwtHelperService.decodeToken(response.datos.token);
-          //console.log('decoded: ', decoded);
-          //this.router.navigateByUrl('/login');
-       
+         
