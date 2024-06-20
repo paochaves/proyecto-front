@@ -1,1 +1,20 @@
 <!-- aca va la api -->
+<main class="d-flex flex-wrap justify-content-center gap-5 m-5">
+@for (perro of nombre; track perro._id) {
+    <div class="card" style="width: 18rem;">
+        <img src= {{perro.foto}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center"> {{perro.nombre}} </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Color:</strong> {{perro.color}} </li>
+          <li class="list-group-item"><strong>Sexo:</strong> {{perro.sexo}} </li>
+          <li class="list-group-item"><strong>Edad:</strong> {{perro.edad}} </li>
+          <li class="list-group-item"><strong>Caracter:</strong> {{perro.caracter}} </li>
+          <li class="list-group-item"><strong>Estado de salud:</strong> {{perro.estadoDeSalud}} </li>
+          <li class="list-group-item"> <strong>Tamaño:</strong> {{perro.tamanio}} </li>
+          
+        </ul>
+    </div>
+}
+</main>
