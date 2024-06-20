@@ -1,0 +1,22 @@
+
+.contenedor {
+    width: 250px; 
+    height: 250px; 
+    border: 1px solid #ccc; 
+    margin-top: 5%;
+    margin-left: 40%;
+    align-items: center;
+    display: flex;
+  }
+  .contenedor img {
+    max-width: 200%; 
+    max-height: 100%; 
+    height: auto; 
+    display: block; 
+  }
+  @media screen and (max-width: 767px) {
+    .contenedor{
+        margin-left: 10%;
+    }
+  }
+   

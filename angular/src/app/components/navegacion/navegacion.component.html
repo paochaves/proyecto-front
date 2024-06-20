@@ -1,13 +1,37 @@
-<nav>
+<nav class="p-3 bg-warning text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/inicio" class="nav-link px-2 text-secondary">Inicio |</a></li>
+        <li><a routerLink="/perrosEnAdopcion" class="nav-link px-2 text-white">Perros en adopción |</a></li>
+        <li><a routerLink="darEnAdopcion" class="nav-link px-2 text-white">Dar en adopción |</a></li>
+        <li><a routerLink="comoAyudar" class="nav-link px-2 text-white">Como ayudar |</a></li>
+        <li><a routerLink="blog" class="nav-link px-2 text-white">Blog |</a></li>
+      </ul>
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2" routerLink="/login">Login</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<!-- <nav>
   <a routerLink="/inicio">Inicio</a>
   |
-  <a routerLink="/productos">Productos</a>
+  <a routerLink="/productos">Perros en adopción</a> 
+  | 
+  <a routerLink="/servicios">Dar en adopción</a>  
   |
-  <a routerLink="/servicios">Servicios</a>
+  <a routerLink="/nosotros">Como ayudar</a>
   |
-  <a routerLink="/nosotros">Nosotros</a>
-  |
-  <a routerLink="/contactanos">Contactanos</a>
+  <a routerLink="/contactanos">Blog</a> 
   |
   <a routerLink="/registrese">Registrarse</a>
   |
@@ -15,4 +39,4 @@
   |
   <a routerLink="/privado">Privado</a>
   |
-</nav>
+</nav> -->

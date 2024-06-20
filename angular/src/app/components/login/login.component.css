@@ -1,0 +1,102 @@
+.contenedor{
+      max-width: 1200px;
+    width: 95%;
+  }
+  
+  .imagen-formulario{
+    background-image: url('../../../assets/imagenes/canLog-in.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 160px;
+    flex: 0 0 calc(60%);
+    position: relative;
+    
+  }
+  .imagen-formulario::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0; 
+  }
+  
+   @media(min-width:768px){
+    .imagen-formulario{
+        height: auto;
+        width: auto;
+        background-position: right;
+    }
+    .contenedor{
+      margin: 20px;
+    }
+  }
+  @media(min-width:1200px){
+    .imagen-formulario{
+        background-position: center;
+    }
+  }
+  
+  @media(min-width:768px){
+    .contenedor-formulario{
+        display: flex;     
+    }
+    } 
+  
+  .formulario{
+    padding: 50px;
+    background-color: wheat;
+  }
+  .texto-formulario h2, .input label, .password-olvidada a, .texto-formulario p{
+    color: black;
+  }
+  .texto-formulario h2{
+    font-size: 35px;
+    text-align: center;
+  }
+  .texto-formulario p{
+    font-size: 22px;
+    text-align: center;
+  }
+  .input label{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  .password-olvidada a{
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    }
+  .input input{
+    width: 100%;
+    padding: 5px 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  .input input[type="submit"]{
+    background-color: orange;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+    
+  }
+  .input input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: orange;
+  }
+  /* MEDIA QUERIES */
+  /*  Teléfonos 
+  @media screen and (max-width: 767px) {
+    
+  }
+  Tabletas 
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+   
+  }
+   Computadores 
+  @media screen and (min-width: 1024px) {
+  }  */

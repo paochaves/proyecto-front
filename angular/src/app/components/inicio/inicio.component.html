@@ -1,1 +1,173 @@
-<p>inicio works!</p>
+<main class="container mt-2">
+    <section class="imagenPrincipal">
+      <div class="card text-bg-dark">
+        <img src="../../../assets/imagenes/imagenPrincipal.jpg" class="card-img" alt="Foto principal">
+        <div class="card-img-overlay text-center d-flex justify-content-center align-items-center">
+          <p class="titulo-principal text-end">¡Adopta hoy, tu mejor amigo te espera!</p>
+        </div>
+      </div>
+    </section>
+    <!-- parrafo de carrusel -->
+     <div class="text-center p-5">
+      <h2>Perros disponibles para adopción</h2>
+      <p class="pt-4">
+        Nuestras mascotas esperan por ti, Encuentra perros disponibles para adopción por raza, edad, tamaño y color.
+        <br>
+        ¡Lo más importante es darles amor, compañia y sus respectivos cuidados!
+      </p>
+     </div>
+  <!-- carrusel -->
+  <div id="carouselExampleIndicators" class="carousel slide justify-content-center p-lg-3">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../../assets/imagenes/canPublicidad.jpg" class="d-block w-100 h-80" alt="Imagen de publicidad">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/imagenes/canAmado.jpg" class="d-block w-100 h-80" alt="Imagen de perro amado">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/imagenes/canesJugando.jpg" class="d-block w-100 h-80" alt="Imagen de perros jugando">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/imagenes/canesCachorros.jpg" class="d-block w-100 h-80" alt="Imagen de perros cachorros">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/imagenes/canBiberon.jpg" class="d-block w-100 h-80" alt="Imagen de perro cachorro tomando biberon">
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- tarjetas -->
+    <div class="card-group p-5 gap-5 text-center">
+      <div class="card">
+        <img src="../../../assets/imagenes/canAbandonado.jpg" class="card-img-top" width="10px" height="220px" alt="Imagen de perro abandonado">
+        <div class="card-body">
+          <h5 class="card-title">Peludito abandonado</h5>
+          <p class="card-text">Encontrar un perro abandonado puede ser una experiencia desgarradora, cualquiera que ha vivido esta situación seguramente ha experimentado una mezcla de emociones muy profundas y un fuerte sentido de responsabilidad para ayudar a este animal que tanto lo necesita.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../../assets/imagenes/canVeterinaria.jpg" class="card-img-top" width="10px" height="220px"alt="Imagen de perro en veterinaria">
+        <div class="card-body">
+          <h5 class="card-title">Cuidados al peludito</h5>
+          <p class="card-text">Adoptar una mascota es una gran responsabilidad y una de las decisiones más importantes que tomaras como dueño de una mascota es si esterilizar o no a su nuevo compañero. La esterilización, vacunación, desparasitación y diversos cuidados que requiere un peludito.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../../assets/imagenes/canAdoptado.jpg" class="card-img-top" width="10px" height="220px" alt="Imagen de perro adoptado">
+        <div class="card-body">
+          <h5 class="card-title">Cuando decido adoptar</h5>
+          <p class="card-text">La primera y la más sencilla, es a través de un portal web como Adopta Hoy. En este sitio web, grupos de refugios y rescatistas de mascotas con buena reputación, publican y actualizan la información de sus mascotas en adopción. Haciendo que sea mucho más fácil para futuros adoptantes, encontrar a su mascota ideal. </p>
+        </div>
+      </div>
+    </div>
+     <!-- Seccion 1 con boton a api de perros -->
+  <section class="py-5 bg-warning p-3 text-white text-center">
+    <div class="container">
+      <h2 class="text-center">¿Necesitas dar en adopción una mascota?</h2>
+       <div class="row">
+        <div class="text-center">
+          <p>Si tienes un refugio, has rescatado una mascota o por algún motivo no puedes seguir cuidando de tu mascota y tienes que darla en adopción, contactanos.</p>
+          <a href="..." target="_blank">
+          <button type="button" class="btn btn-secondary">Ver Peluditos</button>
+        </a>
+        </div>
+       </div>
+    </div>
+  </section>
+    <!-- Acordeon de preguntas frecuentes -->
+    <div class="accordion p-4 border-warning mb-3" id="accordionExample">
+      <h2 class="text-center p-5">Preguntas frecuentes</h2>
+      <p class="text-center">Quiero adoptar un perro
+        ¡Estas en el lugar correcto! Peluditos es una plataforma para adopciones de perros. En nuestro sitio web contamos con cientos de perritos y listos para ser adoptados, que se encuentran en búsqueda de un hogar para toda la vida.
+        En nuestro buscador de mascotas podrás encontrar perros por raza, edad, tamaño y color. Tenemos perritos para adoptar provenientes de refugios, recién rescatados y de dueños particulares.
+      </p>
+      <div class="accordion-item border-warning mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Dónde puedo adoptar un perro?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Con Peluditos no es necesario salir de casa para encontrar a tu próxima mascota. En nuestro sitio web podrás encontrar cientos de perros en adopción. Todas las mascotas mostradas en nuestro sitio web han sido publicadas por refugios, rescatistas independientes o dueños particulares.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item border-warning mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            ¿Cuánto cuesta adoptar un perro?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Depende. En algunos casos las organizaciones pueden dar a las mascotas en adopción sin solicitarle donación alguna, de la misma manera en otros casos los refugios o rescatistas pueden solicitarle que se realice una donación al momento de adoptar una mascota. Esto es una práctica totalmente normal, los fondos que las organizaciones recolectan a través de donaciones son destinados para ayudar a cubrir con los gastos de la organización y así seguir rescatando a más perritos.
+  
+            Peluditos recomienda que siempre tome medidas de seguridad razonables antes de realizar cualquier tipo de pago. 
+            Peluditos no recibe ningún beneficio por parte de las donaciones realizadas.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item border-warning mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Quiero más información sobre una mascota que he visto en Peluditos
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Por favor contacta directamente a la organización que ha publicado la mascota, cada organización en Peluditos es responsable y dueña de la información que publica, ellos podrán brindarle más detalles sobre la mascota de su interés. 
+  
+            Por favor, no contacte al equipo de Peluditos con relación a consultas sobre una mascota individual publicada dentro de nuestro portal, nuestro equipo no posee más información adicional a la que fue publicada en la página de la mascota. Contactar al equipo de Peluditos sobre estos temas ralentizará su búsqueda por información. 
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item border-warning mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Acabo de rescatar un perro de la calle, pero no lo puedo mantener ¿Qué hago?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Primero que nada, queremos agradecerle de parte de todo el equipo de Peluditos y nuestras organizaciones por haber decidido ayudar a este animal cuando más lo necesitaba.
+  
+            Si puedes asumir el cuidado de esta mascota por lo menos durante unas pocas semanas, nuestra primera recomendación sería llevarla al veterinario (si está dentro de tus capacidades).
+  
+            Si la mascota se encuentra saludable y en condiciones para ser dada en adopción, te invitamos a contactarnos en Peluditos, para que así posibles adoptantes interesados te puedan contactar y dar inicio al proceso de adopción.
+  
+            En caso de no poder cuidar de este perrito, lo recomendable es contactar a refugios o rescatistas explicándoles la situación. En el mejor de los casos una organización podría ayudarle con el cuidado de esta mascota.
+          </div>
+        </div>
+      </div>
+    </div>
+   <!-- Seccion 2 con boton a blog -->
+   <section class="py-5 bg-secondary p-3 text-white justify-content-center">
+    <div class="container">
+      <h2 class="text-center">¿Piensas adoptar una mascota?</h2>
+      <p class="text-center">¡Peluditos es tu solución!</p>
+      <div class="row">
+        <div class="text-center">
+          <p class="text-center">Lee nuestro blog y conoce todo lo que debes saber antes, durante y después de adoptar una mascota</p>
+          <button class="btn btn-warning justify-content-center" routerLink="/blog">Ir a Blog</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>

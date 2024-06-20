@@ -1,8 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { LoginService } from "../../services/login.service";
-
-const jwtHelperService = new JwtHelperService();
+import { ToastrService } from 'ngx-toastr';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-privado',
@@ -11,28 +9,40 @@ const jwtHelperService = new JwtHelperService();
   templateUrl: './privado.component.html',
   styleUrl: './privado.component.css',
 })
-
-export class PrivadoComponent {
+export class privadoComponent {
+  toastrService = inject(ToastrService);
   loginService = inject(LoginService);
-  nombre: string = '';
+
+  name: string = '';
+
   ngOnInit() {
     const token: any = localStorage.getItem('token');
-    console.log('token: ', token);
-    const decoded = jwtHelperService.decodeToken(token);
+    if (token) {
+      this.loginService.validateToken(token).subscribe((response: any) => {
+        if (response.resultado === 'bien') {
+          this.name = response.datos.name;
+          this.toastrService.success(`Hello, ${this.name}!`);
+        } else {
+          this.loginService.logout();
+        }
+      }
+    )}
+  }
+}
+    /* const decoded = jwtHelperService.decodeToken(token);
     console.log('decoded: ', decoded);
     this.nombre = decoded.name;
     if (token) {
       this.loginService.validateToken(token).subscribe((response: any) => {
-        console.log('response: ', response);
+        
         if (response.resultado === 'bien') {
           this.nombre = response.datos.name;
         } else {
-          console.log('el token no es válido...');
+          this.loginService.logout();
         }
       });
     } else {
-      console.log('no existe token...');
+      this.loginService.logout();
     }
   }
-}
-    
+} */

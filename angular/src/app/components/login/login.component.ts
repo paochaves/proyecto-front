@@ -6,9 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Credencial } from '../../interfaces/credencial';
 import { LoginService } from '../../services/login.service';
+
 
 const jwtHelperService = new JwtHelperService();//preguntar esta constante
 
@@ -21,6 +23,7 @@ const jwtHelperService = new JwtHelperService();//preguntar esta constante
 })
 export class LoginComponent {
   router = inject(Router);
+  toastrService = inject(ToastrService);
   loginService: LoginService = inject(LoginService);
 
   credencialsForm = new FormGroup({
@@ -39,14 +42,23 @@ export class LoginComponent {
           password,
         };
         this.loginService.login(credencial).subscribe((response: any) => {
-          console.log('response: ', response);
-          const decoded = jwtHelperService.decodeToken(response.datos.token);
-          console.log('decoded: ', decoded);
-          this.router.navigateByUrl('/login');
+          if (response.resultado === 'bien') {
+            localStorage.setItem('token', response.datos);
+            this.router.navigateByUrl('/privado');
+          } else {
+            this.toastrService.warning('Invalid credentials');
+          }
         });
       }
     } else {
-      console.log('Error: invalid form');
+      console.log('notificación');
+      this.toastrService.warning('Todos los campos son obligatorios');
     }
   }
-}
+}   
+                             
+          //console.log('response: ', response);
+          //const decoded = jwtHelperService.decodeToken(response.datos.token);
+          //console.log('decoded: ', decoded);
+          //this.router.navigateByUrl('/login');
+       
