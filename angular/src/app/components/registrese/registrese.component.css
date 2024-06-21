@@ -1,0 +1,88 @@
+@media(min-width:768px){
+    .form-registro{
+        width: auto;
+        margin: 50px;
+        padding: 5px;
+        
+}
+.caja{
+    font-size: 50px;
+}
+
+}
+/* caja */
+.caja{
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-bottom: 0%;
+}
+
+/* formulario de registro */
+.card-titulo{
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .card-texto{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 5px;
+  }
+  
+  .form-registro{
+    width: 400px;
+    background: rgb(252, 199, 100);
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    box-shadow: 7px 13px 37px #3c3936;
+  }
+  .titulo{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+    .control{
+      width: 100%;
+      background: #f1e6d0;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #f1e6d0;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      color: black;
+    }
+    .form-registro p{
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+    }
+    .form-registro a{
+      color: white;
+      text-decoration: none;
+    }
+    a:hover{
+      color: white;
+      text-decoration: underline;
+    }
+    .boton{
+      width: 100%;
+      background: #cd8a33;
+      border: none;
+      padding: 12px;
+      color: white;
+      margin: 16px 0;
+      font-size: 16px;
+    } 
+  

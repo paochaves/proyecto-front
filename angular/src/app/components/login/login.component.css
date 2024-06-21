@@ -1,14 +1,20 @@
+
 .contenedor{
-      max-width: 1200px;
-    width: 95%;
+    max-width: 1200px;
+    width: 90%;
+    justify-content: center;
+    padding-left: 100px;
+    padding-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
   }
   
   .imagen-formulario{
     background-image: url('../../../assets/imagenes/canLog-in.jpg');
     background-position: center center;
     background-size: cover;
-    height: 160px;
-    flex: 0 0 calc(60%);
+    height: 150px;
+    flex: 0 0 calc(55%);
     position: relative;
     
   }
@@ -19,6 +25,14 @@
    bottom: 0;
    left: 0;
    right: 0; 
+  }
+  .input{
+    background-color: wheat;
+    font-size: 14px;
+  }
+  label{
+    padding: 0px;
+    padding-bottom: 0%;
   }
   
    @media(min-width:768px){
@@ -44,7 +58,7 @@
     } 
   
   .formulario{
-    padding: 50px;
+    padding: 60px;
     background-color: wheat;
   }
   .texto-formulario h2, .input label, .password-olvidada a, .texto-formulario p{

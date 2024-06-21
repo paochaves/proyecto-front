@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
+import { CanesService } from "../../services/canes.service";
 
 @Component({
   selector: 'app-privado',
@@ -12,10 +13,18 @@ import { LoginService } from '../../services/login.service';
 export class privadoComponent {
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
+  canesServices = inject(CanesService)
 
   name: string = '';
+  nombre : any =''
+  id: any =''
 
   ngOnInit() {
+    this.canesServices.leerCan().subscribe((respuesta:any)=>{
+      this.nombre = respuesta.datos
+      
+    console.log(this.nombre);
+    })
     const token: any = localStorage.getItem('token');
     if (token) {
       this.loginService.validateToken(token).subscribe((response: any) => {
@@ -30,21 +39,6 @@ export class privadoComponent {
       this.loginService.logout();
     }
   }
+  
 }
-    /* const decoded = jwtHelperService.decodeToken(token);
-    console.log('decoded: ', decoded);
-    this.nombre = decoded.name;
-    if (token) {
-      this.loginService.validateToken(token).subscribe((response: any) => {
-        
-        if (response.resultado === 'bien') {
-          this.nombre = response.datos.name;
-        } else {
-          this.loginService.logout();
-        }
-      });
-    } else {
-      this.loginService.logout();
-    }
-  }
-} */
+    

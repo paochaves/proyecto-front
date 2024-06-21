@@ -1,10 +1,10 @@
 <!-- aca va la api -->
 <main class="d-flex flex-wrap justify-content-center gap-5 m-5">
 @for (perro of nombre; track perro._id) {
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; font-family: Georgia, 'Times New Roman', Times, serif;">
         <img src= {{perro.foto}} class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title text-center"> {{perro.nombre}} </h5>
+          <h5 class="card-title text-center"> <strong>{{perro.nombre}}</strong></h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Color:</strong> {{perro.color}} </li>

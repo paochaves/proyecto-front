@@ -1,0 +1,23 @@
+/* MEDIA QUERIES */
+/* Teléfonos */
+.titulo-principal{
+    font-size: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.titulo3{
+  font-size: 35px;
+}
+@media screen and (max-width: 767px) {
+    .titulo-principal{
+      font-size: 16px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .titulo3{
+      font-size: 22px;
+    }
+    }
+    .card-text, h5, p, h2{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  
+    

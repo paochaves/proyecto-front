@@ -13,4 +13,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navegacion.component.html',
   styleUrl: './navegacion.component.css',
 })
+
+
 export class NavegacionComponent {}
