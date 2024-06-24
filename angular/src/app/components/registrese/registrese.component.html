@@ -1,20 +1,75 @@
 <div class="caja mt-4 p-3 m-3">
-    <p><strong>Aca podras diligenciar el formulario de registro:</strong></p>
+    <p><strong>Deberás diligenciar el formulario de registro y podas iniciar sesión para acceder a todos los Peluditos que se encuentran esperando por una familia:</strong></p>
   </div>
-<section class="form-registro">
+  
+<form [formGroup]="miFormulario" (ngSubmit)="onSubmit()" class="form-registro">
     <h4 class="titulo"><strong>Formulario de registro</strong></h4>
-    <input class="control" type="text" name="nombre" id="nombres" placeholder="Ingrese su nombre">
-    <input class="control" type="text" name="apellido" id="apellidos" placeholder="Ingrese su apellido">
-    <input class="control" type="text" name="nombreDeUsuario" id="nombresDeUsuario" placeholder="Ingrese su nombre de usuario">
-    <input class="control" type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" placeholder="Ingrese su fecha de nacimiento">
-    <input class="control" type="text" name="tipoDeDocumento" id="tipoDeDocumento" placeholder="Ingrese su tipo de documento">
-    <input class="control" type="number" name="numeroDeDocumento" id="numeroDeDocumento" placeholder="Ingrese su número de documento">
-    <input class="control" type="number" name="telefono" id="telefono" placeholder="Ingrese su número de telefono">
-    <input class="control" type="text" name="pais" id="pais" placeholder="Ingrese el país">
-    <input class="control" type="text" name="ciudadDeResidencia" id="ciudadDeResidencia" placeholder="Ingrese su ciudad de residencia">
-    <input class="control" type="text" name="direccion" id="direccion" placeholder="Ingrese su dirección">
-    <input class="control" type="email" name="correoElectronico" id="correoElectronico" placeholder="Ingrese su correo electrónico">
-    <input class="control" type="password" name="contrasenia" id="contrasenia" placeholder="Ingrese su contraseña"> 
-    <p>Estoy de acuerdo con los <a href="#">Terminos y condiciones</a></p>
-<input class="boton" type="submit" value="Registrarme">
-</section>
+    
+    <div class="form-group">
+        <label for="nombre">Nombre</label>    
+        <input  class="control" type="text" name="nombre" id="nombre" formControlName="nombre" placeholder="Ingrese su nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input class="control" type="text" name="apellido" id="apellido" formControlName="apellido" placeholder="Ingrese su apellido">
+  </div>
+
+  <div class="form-group">
+    <label for="nombreDeUsuario">Nombre De Usuario</label>
+    <input class="control" type="text" name="nombreDeUsuario" id="nombreDeUsuario" formControlName="nombreDeUsuario" placeholder="Ingrese su nombre de usuario">
+  </div>
+    
+  <div class="form-group">
+    <label for="fechaDeNacimiento">Fecha De Nacimiento</label>
+    <input class="control" type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" formControlName="fechaDeNacimiento" placeholder="Ingrese su fecha de nacimiento">
+  </div>
+
+  <div class="form-group">
+    <label for="tipoDeDocumento">Tipo De Documento</label>
+    <input class="control" type="text" name="tipoDeDocumento" id="tipoDeDocumento" formControlName="tipoDeDocumento" placeholder="Ingrese su tipo de documento">
+  </div>
+
+  <div class="form-group">  
+    <label for="numeroDeDocumento">Numero De Documento</label>
+    <input class="control" type="number" name="numeroDeDocumento" id="numeroDeDocumento" formControlName="numeroDeDocumento" placeholder="Ingrese su número de documento">
+  </div>
+
+  <div class="form-group">  
+    <label for="genero">Género</label>
+    <input class="control" type="text" name="genero" id="genero" formControlName="genero" placeholder="Ingrese su genero">
+  </div>
+    
+  <div class="form-group">
+    <label for="telefono">Telefono</label>
+    <input class="control" type="number" name="telefono" id="telefono" formControlName="telefono" placeholder="Ingrese su número de telefono">
+  </div>
+    
+  <div class="form-group">
+    <label for="pais">País</label>
+    <input class="control" type="text" name="pais" id="pais" formControlName="pais" placeholder="Ingrese el país">
+  </div>
+    
+  <div class="form-group">
+    <label for="ciudadDeResidencia">Ciudad De Residencia</label>
+    <input class="control" type="text" name="ciudadDeResidencia" id="ciudadDeResidencia" formControlName="ciudadDeResidencia" placeholder="Ingrese su ciudad de residencia">
+  </div>
+    
+  <div class="form-group">
+    <label for="direccion">Dirección</label>
+    <input class="control" type="text" name="direccion" id="direccion" formControlName="direccion" placeholder="Ingrese su dirección">
+  </div>
+    
+  <div class="form-group">
+    <label for="correoElectronico">Correo Electrónico</label>
+    <input class="control" type="email" name="correoElectronico" id="correoElectronico" formControlName="correoElectronico" placeholder="Ingrese su correo electrónico">
+  </div>
+    
+  <div class="form-group">
+    <label for="contrasenia">Contraseña</label>
+    <input class="control" type="password" name="contrasenia" id="contrasenia" formControlName="contrasenia" placeholder="Ingrese su contraseña"> 
+  </div>
+
+  <button type="submit" value="Registrarme" class="boton">Registrarme</button>
+
+  </form>
