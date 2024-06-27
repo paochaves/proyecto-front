@@ -47,13 +47,13 @@ export class LoginComponent {
             localStorage.setItem('token', response.datos.token);
             this.router.navigateByUrl('/privado');
           } else {
-            this.toastrService.warning('credenciales invalidas');
+            this.toastrService.warning('credenciales invalidas');//no esta funcionando
           }
         });
       }
     } else {
       console.log('notificación');
-      this.toastrService.warning('Todos los campos son obligatorios');
+      this.toastrService.warning('Todos los campos son obligatorios');// no esta funcionando
     }
   }
 }   

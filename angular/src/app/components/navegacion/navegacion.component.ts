@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 
 
@@ -7,12 +8,16 @@ import { RouterLink } from '@angular/router';
   selector: 'app-navegacion',
   standalone: true,
   imports: [
-    RouterLink,
-   
-  ],
+    RouterLink],
   templateUrl: './navegacion.component.html',
   styleUrl: './navegacion.component.css',
 })
 
 
-export class NavegacionComponent {}
+export class NavegacionComponent {
+  loginService: LoginService = inject(LoginService);
+  logout() {
+  this.loginService.logout();
+  };
+  }
+

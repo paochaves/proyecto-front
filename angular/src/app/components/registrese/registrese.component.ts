@@ -1,8 +1,9 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, inject  } from '@angular/core';
 import { RegistroService } from "../../services/registro.service";
 import { FormsModule, ReactiveFormsModule, FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
-//import { subscribeOn } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-registrese',
@@ -13,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegistreseComponent implements OnInit{
  miFormulario: FormGroup;
+ toastrService = inject(ToastrService);
  
  constructor(private fb: FormBuilder, private http: HttpClient, private registroService: RegistroService) {
 
@@ -40,6 +42,7 @@ export class RegistreseComponent implements OnInit{
    if (this.miFormulario.valid) {
      this.registroService.usuarios(this.miFormulario.value).subscribe(
       (response) => {
+        this.toastrService.info('¡Registro exitoso!');
         console.log("Registro exitoso", response);
       },
       (error) => {
@@ -47,7 +50,8 @@ export class RegistreseComponent implements OnInit{
       }
      );
      }else {
+      this.toastrService.info('¡Todos lo campos son obligatorios!');
       console.log("Formulario no valido");
    }
   } 
-}
+}  

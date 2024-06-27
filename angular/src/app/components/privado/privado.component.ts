@@ -30,11 +30,11 @@ export class privadoComponent {
       this.loginService.validateToken(token).subscribe((response: any) => {
         if (response.resultado === 'bien') {
           this.name = response.datos.name;
-          this.toastrService.success(`Hello, ${this.name}!`);
+          this.toastrService.success(`Hola, ${this.name}!`);
         } else {
           this.loginService.logout();
         }
-      });
+      });      
     } else {
       this.loginService.logout();
     }

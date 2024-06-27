@@ -12,11 +12,15 @@
         <li><a routerLink="registrese" class="nav-link px-2 text-white">Registrese |</a></li>
       </ul>
       <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2" routerLink="/login">Login</button>
+        @if(loginService.isLogin()) {
+          <button type="button" class="btn btn-outline-light me-2" (click)="logout()">Cerrar Sesión</button> 
+          } @else {
+        <button type="button" class="btn btn-outline-light me-2" routerLink="/login">Iniciar Sesión</button>
+          }
       </div>
     </div>
   </div>
-</nav>
+</nav>  
 
 
 
