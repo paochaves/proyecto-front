@@ -10,7 +10,7 @@ export class CanesService {
   router = inject(Router);
   constructor() { }
 
-API_URL = 'http://localhost:3000/can';
+API_URL = 'http://18.191.110.158:3000/can';
 
 
 leerCan() {

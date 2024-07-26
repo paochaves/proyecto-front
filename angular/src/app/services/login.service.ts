@@ -13,7 +13,7 @@ export class LoginService {
   toastrService = inject(ToastrService);
   router = inject(Router);
 
-  API_URL = 'http://localhost:3000/iniciarSesion';
+  API_URL = 'http://18.191.110.158:3000/iniciarSesion';
   //API_URLvalidar = 'http://localhost:3000/validarToken';
 
   login(credencial: Credencial) {

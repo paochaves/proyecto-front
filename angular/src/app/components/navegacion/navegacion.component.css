@@ -1,5 +1,9 @@
 /* MEDIA QUERIES */
 /* Teléfonos */
+.btn{
+    background-color: rgb(134, 134, 133);
+    
+}
 @media screen and (max-width: 767px) {
     body {
       font-size: 18px;

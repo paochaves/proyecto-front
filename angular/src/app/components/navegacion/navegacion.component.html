@@ -5,17 +5,17 @@
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
       </a>
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="/inicio" class="nav-link px-2 text-secondary">Inicio |</a></li>
-        <li><a routerLink="darEnAdopcion" class="nav-link px-2 text-white">Dar en adopción |</a></li>
-        <li><a routerLink="comoAyudar" class="nav-link px-2 text-white">Como ayudar |</a></li>
-        <li><a routerLink="blog" class="nav-link px-2 text-white">Blog |</a></li>
-        <li><a routerLink="registrese" class="nav-link px-2 text-white">Registrese |</a></li>
+        <li><a routerLink="/inicio" class="nav-link px-2 text-secondary"><strong>Inicio |</strong></a></li>
+        <li><a routerLink="darEnAdopcion" class="nav-link px-2 text-white"><strong>Dar en adopción |</strong></a></li>
+        <li><a routerLink="comoAyudar" class="nav-link px-2 text-white"><strong>Como ayudar |</strong></a></li>
+        <li><a routerLink="blog" class="nav-link px-2 text-white"><strong>Blog |</strong></a></li>
+        <li><a routerLink="registrese" class="nav-link px-2 text-white"><strong>Registrese |</strong></a></li>
       </ul>
       <div class="text-end">
         @if(loginService.isLogin()) {
-          <button type="button" class="btn btn-outline-light me-2" (click)="logout()">Cerrar Sesión</button> 
+          <button type="button" class="btn btn-outline-light me-2 bg-secundary" (click)="logout()"><strong>Cerrar Sesión</strong></button> 
           } @else {
-        <button type="button" class="btn btn-outline-light me-2" routerLink="/login">Iniciar Sesión</button>
+          <button type="button" class="btn btn-outline-light me-2" routerLink="/login"><strong>Iniciar Sesión</strong></button>
           }
       </div>
     </div>
