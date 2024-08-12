@@ -3,5 +3,7 @@
 }
 .button-container {
     display: flex;
-    gap: 10px; /* Espacio entre los botones */
-}
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+  }

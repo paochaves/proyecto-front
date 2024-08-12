@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitaService {
 
-  private apiUrl = 'https://tu-backend-api.com/citas'; // URL de tu backend
+  private apiUrl = 'http://localhost:3000/appointments'; // URL de backend
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  makeAppointment(citaData: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, citaData);
-  }
-} 
-
-
+	createAppointment(appointment: any) {
+		return this.httpClient.post(this.apiUrl, appointment);
+	}
+}

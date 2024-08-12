@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdoptarloService {
+export class adoptarloService {
 
-  private apiUrl = 'https://tu-backend.com/api/appointments';  // Cambia esta URL por la de tu backend
+  private apiUrl = 'http://localhost:3000/esquema'; // URL de backend
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  scheduleAppointment(fecha: string): Observable<any> {
-    const body = { fecha };
-    return this.http.post<any>(this.apiUrl, body);
-  }
+	createCita(appointment: any) {
+		return this.httpClient.post(this.apiUrl, appointment);
+	}
 }

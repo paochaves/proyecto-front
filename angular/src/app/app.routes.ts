@@ -27,6 +27,8 @@ export const routes: Routes = [
     title: 'Login',
   },
   { path: 'privado', component: privadoComponent, title: '¡Privado! Peluditos', canActivate:[activeGuard] },
+  { path: "citas", component: privadoComponent, title: "Citas" },
+  { path: "adoptarlo", component: privadoComponent, title: "Adoptarlo" },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: '**', component: NoEncontradoComponent, title: '404' },
 ];

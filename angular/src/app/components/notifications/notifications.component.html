@@ -1,0 +1,6 @@
+<div *ngIf="isVisible$ | async" class="notification" [ngClass]="type$ | async">
+    <p>{{ message$ | async }}</p>
+    <button (click)="close()">Close</button>
+  </div>
+
+ 

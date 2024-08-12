@@ -5,8 +5,9 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 
 import { routes } from './app.routes';
+import { provideStore } from '@ngrx/store';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(),provideAnimations(),
-    provideToastr(),],
+  providers: [provideRouter(routes), provideHttpClient(), provideAnimations(),
+    provideToastr(), provideStore()],
 };

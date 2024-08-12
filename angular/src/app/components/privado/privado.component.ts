@@ -3,8 +3,13 @@ import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
 import { CanesService } from "../../services/canes.service";
 import { CitaService } from "../../services/citas.service";
-import { AdoptarloService } from "../../services/adoptarlo.service";
+import { adoptarloService} from "../../services/adoptarlo.service";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule} from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { showSuccessNotification,clearNotification} from '../../notification-ngrx/notification.actions';
 
 
 @Component({
@@ -16,14 +21,38 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule} f
 
 })
 export class privadoComponent {
+onSubmit(_t117: NgForm) {
+throw new Error('Method not implemented.');
+}
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
   canesServices = inject(CanesService);
-  citaForm = FormGroup;
-
+  selectedServices: string[] = [];
+  selectedDate: string = '';
+  
+//login
   name: string = '';
   nombre : any =''
   id: any =''
+
+  //boton 1
+  appointment = {
+		hogarTemporal: false,
+		paseadorCanino: false,
+		voluntariadoDeLimpieza: false,
+		veterinaria: false,
+		donar: false,
+		fecha: ""
+	};
+  //boton 2
+  esquemaadoptarlo = {
+    fecha: String, };
+
+//notificaciones ngrx
+  message$: Observable<string | null> | undefined;
+  type$: Observable<'success' | 'error' | null> | undefined;
+
+  
 
   ngOnInit() {
     this.canesServices.leerCan().subscribe((respuesta:any)=>{
@@ -45,38 +74,41 @@ export class privadoComponent {
       this.loginService.logout();
     }
   }
- 
-  constructor(private fb: FormBuilder, private CitaService: CitaService, private adoptarloService: AdoptarloService) {}
+//  boton 1 de citas ayuda social
+  constructor(private fb: FormBuilder, private CitaService: CitaService, /*private adoptarloService: AdoptarloService,*/ private store: Store) {
+  
+  }
+
+  onAdoptionSuccess() {
+    this.store.dispatch(showSuccessNotification({ message: 'Adopción exitosa!' }));
+    setTimeout(() => {
+      this.store.dispatch(clearNotification());
+    }, 3000);
+  }
 
   makeAppointment() {
-    const data = {
-      hogarTemporal: (document.getElementById('hogarTemporal') as HTMLInputElement).checked,
-      paseadorCanino: (document.getElementById('paseadorCanino') as HTMLInputElement).checked,
-      voluntariadoDeLimpieza: (document.getElementById('voluntariadoDeLimpieza') as HTMLInputElement).checked,
-      veterinaria: (document.getElementById('veterinaria') as HTMLInputElement).checked,
-      donar: (document.getElementById('donar') as HTMLInputElement).checked,
-      fecha: (document.getElementById('fecha') as HTMLInputElement).value,
-    };
+		console.log("Datos del formulario:", this.appointment);
+		this.CitaService.createAppointment(this.appointment).subscribe(
+			(response) => {
+        this.onAdoptionSuccess();
+				console.log("Cita agendada exitosamente", response);
 
-    this.CitaService.makeAppointment(data).subscribe(response => {
-      console.log('Su cita fue agendada con éxito:', response);
-    }, error => {
-      console.error('Error al agendar la cita:', error);
-    });
+			},
+			(error) => {
+				console.error("Error al agendar la cita", error);
+			}
+		);
+//boton 2 adoptarlo
+/* onSubmit() {
+  console.log("Datos del formulario:", this.appointment);
+  this.adoptarloService.createAppointment(this.appointment).subscribe((response) => {
+    this.onAdoptionSuccess();
+    console.log("Su cita fue agendada exitosamente", response);
+  },
+  (error) => {
+    console.error("Error al agendar la cita", error);
   }
-
-  onSubmit(form: any) {
-    const fecha = form.value.fecha;
-
-    this.adoptarloService.scheduleAppointment(fecha).subscribe({
-      next: (response) => {
-        console.log('Cita agendada con éxito:', response);
-      },
-      error: (error) => {
-        console.error('Error al agendar la cita:', error);
-      }
-    });
-  }
+); */
 }
-
+}
     
