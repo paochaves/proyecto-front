@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdoptarloService {
 
-  private apiUrl = 'http://localhost:3000/esquema'; // URL de backend
+  private apiUrl = 'http://18.224.173.229:3000/esquema'; // URL de backend
 
   constructor(private httpClient: HttpClient) { }
 

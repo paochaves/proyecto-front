@@ -14,7 +14,7 @@ export class LoginService {
   router = inject(Router);
 
   //API_URL = 'http://18.224.173.229:3000/iniciarSesion';
-  API_URL = 'http://localhost:3000/iniciarSesion';
+  API_URL = 'http://18.224.173.229:3000/iniciarSesion';
 
   login(credencial: Credencial) {
    // console.log(credencial);
