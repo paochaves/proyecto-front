@@ -5,6 +5,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
 import { RegistreseComponent } from "./components/registrese/registrese.component";
+import { privadoComponent } from "./components/privado/privado.component";
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ import { RegistreseComponent } from "./components/registrese/registrese.componen
     HeaderComponent,
     FooterComponent,
     NavegacionComponent,
-    RegistreseComponent
+    RegistreseComponent,
+    privadoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
