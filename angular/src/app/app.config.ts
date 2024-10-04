@@ -5,7 +5,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
-import { alertReducer } from ".//notification-ngrx/notification.reducer";
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
@@ -13,6 +13,5 @@ export const appConfig: ApplicationConfig = {
      provideAnimations(),
     provideToastr(), 
     provideStore(),
-    provideState({name:'AlertState', reducer: alertReducer })
   ],
 };

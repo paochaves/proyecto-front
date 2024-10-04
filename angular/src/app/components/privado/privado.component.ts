@@ -9,8 +9,6 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import * as NotificationActions from '../../notification-ngrx/notification.actions';
-import { AlertState } from '../../notification-ngrx/notification.state';
 import { NgClass } from '@angular/common';
 
 
@@ -27,7 +25,7 @@ onSubmit(_t117: NgForm) {
 throw new Error('Method not implemented.');
 }
 //notification ngrx
-alert$: Observable<AlertState>;
+
 
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
@@ -77,10 +75,9 @@ alert$: Observable<AlertState>;
   }
 
 //  boton 1 de citas ayuda social
-  constructor(private fb: FormBuilder, private CitaService: CitaService, private AdoptarloService: AdoptarloService, private store: Store<{ alert: AlertState }>) {    
+  constructor(private fb: FormBuilder, private CitaService: CitaService, private AdoptarloService: AdoptarloService,) {    
     //ngrx
-    this.alert$ = this.store.select('alert'); }
-    
+  }
   makeAppointment() {
 		console.log("Datos del formulario:", this.appointment);
 		this.CitaService.createAppointment(this.appointment).subscribe(
@@ -101,7 +98,6 @@ alert$: Observable<AlertState>;
 esquemaOnSubmit() {
   console.log("Datos del formulario:", this.esquema);
   this.AdoptarloService.createCita(this.esquema).subscribe((response) => {
-    this.store.dispatch(NotificationActions.showAlert({ message: '¡Perro adoptado con éxito!', alertType: 'success' }));
     console.log("Su cita fue agendada exitosamente", response);
     this.toastrService.success('Su cita fue agendada con éxito');
   },
